@@ -9,7 +9,7 @@ function [Rot_mat] = rotan(wristpose)
 
     pr_vec = cross(PP1, PP2);             % vector perp to PP1 and PP2
     pr_vec = pr_vec/norm(pr_vec);         % unit vector perp to PP1 and PP2
-    om_hat = [0 -pr_vec(3) pr_vec(2);     % axis of rotation
+    om_hat = [0 -pr_vec(3) pr_vec(2);     % axis of rotation (skew symmetric matrix form)
               pr_vec(3) 0 -pr_vec(1);
               -pr_vec(2) pr_vec(1) 0];
 

@@ -6,7 +6,7 @@ close all
 addpath supported_files
 
 %% Solution tolerance
-tol = 1e-3;
+tol = 1e-4;
 
 %% Control parameters of the code
 %npts = 50;               % number of discrete theta1
@@ -14,7 +14,7 @@ c_ang_res = tol*1e-2;     % resolution of phi angle
 th1_res = 0.01;           % resolution of theta1 angle
 
 %% Desired configuration
-gst_d = load('read_write_files/ee_configuration4.txt');     % desired tool frame configuration
+gst_d = load('read_write_files/ee_configuration5.txt');     % desired tool frame configuration
 
 % p = [0.675, 0.225, 0.130];  % IKFast fails
 % R = quat2rotm([0, 0, 1, 0]);
@@ -80,7 +80,7 @@ th1_range = linspace(th1_min, th1_max, ceil((th1_max - th1_min)/th1_res));
 
 tic;
 for i = 1 : length(th1_range)
-%    comp_angle(tol, -1.5799, c_ang_res, gst_d, ak, dk, alp, bax_base, jl_min, jl_max, wrist_gbl, L1, L2, filename);
+%     comp_angle(tol, -1.1525, c_ang_res, gst_d, ak, dk, alp, bax_base, jl_min, jl_max, wrist_gbl, L1, L2, filename);
    comp_angle(tol, th1_range(i), c_ang_res, gst_d, ak, dk, alp, bax_base, jl_min, jl_max, wrist_gbl, L1, L2, filename);
 end
 toc;

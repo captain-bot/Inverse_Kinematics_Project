@@ -16,7 +16,6 @@ T_af = T_af_multi(:,:,2);               % transformation of artificial frame in 
 
 DWpose_af = T_af(1:3,1:3)'*wrist_gbl - T_af(1:3,1:3)'*T_af(1:3,4);
 d = norm(DWpose_af);
-
 % Check reachability for given theta1
 if d >= L1 + L2
     fprintf('\nDesired configuration can not be reached for th1 = %6.4f\n', th1);
