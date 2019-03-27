@@ -14,11 +14,11 @@ c_ang_res = tol*1e-2;     % resolution of phi angle
 th1_res = 0.01;           % resolution of theta1 angle
 
 %% Desired configuration
-gst_d = load('read_write_files/ee_configuration5.txt');     % desired tool frame configuration
+% gst_d = load('read_write_files/ee_configuration5.txt');     % desired tool frame configuration
 
-% p = [0.675, 0.225, 0.130];  % IKFast fails
-% R = quat2rotm([0, 0, 1, 0]);
-% gst_d = [R p'; 0 0 0 1];
+p = [0.675, 0.225, 0.130];  % IKFast fails
+R = quat2rotm([0, 0, 1, 0]);
+gst_d = [R p'; 0 0 0 1];
 
 %% Opening a file to write joint solutions
 filename = sprintf('read_write_files/%s_%d.txt','IKsol',30);
@@ -28,7 +28,8 @@ fclose(fileID);
 %% Slove forward kinematics
 % DH parameters
 ak = [0.069 0 0.069 0 0.010 0 0];
-dk = [0.27035 0 0.36435 0 0.37429 0 0.254525+0.150];  % add 0.15 to match left_gripper transform
+% dk = [0.27035 0 0.36435 0 0.37429 0 0.254525+0.150];  % add 0.15 to match left_gripper transform
+dk = [0.27035 0 0.36435 0 0.37429 0 0.2295+0.150];
 alp = pi*[-1/2 1/2 -1/2 1/2 -1/2 1/2 0];
 
 % base transformations
@@ -76,8 +77,8 @@ fprintf('------------------------------------------------------------\n');
 % th1_min = -0.45; th1_max = 1.0009;
 % th1_min = -1.15; th1_max = -0.7;
 % th1_min = -1.6; th1_max = -0.085;   % counter IKFast
-th1_range = linspace(th1_min, th1_max, ceil((th1_max - th1_min)/th1_res));
-
+% th1_range = linspace(th1_min, th1_max, ceil((th1_max - th1_min)/th1_res));
+th1_range = -0.5867;
 tic;
 for i = 1 : length(th1_range)
 %     comp_angle(tol, -1.1525, c_ang_res, gst_d, ak, dk, alp, bax_base, jl_min, jl_max, wrist_gbl, L1, L2, filename);

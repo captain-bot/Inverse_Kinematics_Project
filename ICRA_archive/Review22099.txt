@@ -1,0 +1,38 @@
+Reviewer 1 of ICRA 2019 submission 2057
+
+Comments to the author
+======================
+
+It is true that inverse kinematics (IK) is a fundamental
+problem in motion and trajectory planning of robotic
+manipulators. This paper presented a search based inverse
+kinematic solver by exploiting the geometry of a 7DoF
+redundant manipulator with offsets at shoulder, elbow and
+wrist, respectively. Following the geometry based fact of
+the redundant manipulator, an inverse kinematics algorithm
+was presented and validated with the commercial 7DoF
+redundant Baxter robot. 
+
+Some remarks are listed below:
+1) In general, the motivation of this work is explicitly
+stated and the paper is well written. The proposed geometry
+based IK solver could be used for real robots where the
+existing solver fails to find any solutions.
+2) One potential drawback of a geometry based algorithm for
+IK is the cost of solving time. For example, the solve time
+given in this work is 6-9s. Can the authors compare the
+efficiency of the proposed algorithm with existing
+algorithm in the scenarios both algorithms can provide
+solutions? This could be then used as an parameter in the
+metric to help users to select solvers for various tasks.
+3) page 2, Problem statement: 'end effector' should be
+'end-effector'
+4) page 3, paragraph following Eq. (4): 'extracting 4th and
+3rd columns..' from where?
+5) Eq.(7): Is this equation only presenting the position of
+C_i and not the circle?
+6) Eq. (8): Please give the expression of the rotation
+matrix 
+7) Page 5: check and revise 'existed. We check the validity
+computed theta_1 to theta_5 by are valid ...'
+8) Fig. 4: a schematic configuration would be better 

@@ -210,7 +210,7 @@ bool comp_angle(mat* solv, int* iter_val, double* tol, double* th1, mat* pd, mat
                                        mat T7 = T6 * bax_tran(ak->at(6), dk->at(6), alpk->at(6), th7, 7);
                                        if (norm(T7(span(0,2),span(3,3))-(pd->t())) < *tol && norm(eye<mat>(3,3) - (*rd)*T7(span(0,2),span(0,2)).t()) < *tol){
                                            *iter_val = i_iter;                                           
-                                           T7.print();
+//                                           T7.print();
                                            solv->at(1) = sol23(j_iter, 0); 
                                            solv->at(2) = sol23(j_iter, 1); 
                                            solv->at(3) = sol45(k_iter, 0); 

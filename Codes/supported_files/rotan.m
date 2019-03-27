@@ -1,7 +1,7 @@
 function [Rot_mat] = rotan(wristpose)
 
-% ROTAN is the function returns the rotation matrix that rotates points
-% from its original position on to z3 axis
+    % ROTAN is the function returns the rotation matrix that rotates points
+    % from its original position on to z3 axis
 
     PP1 = wristpose;                      % initial vector   
 %     PP2 = [0; 0; norm(PP1)];            % rotated vector

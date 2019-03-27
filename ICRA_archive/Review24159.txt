@@ -1,0 +1,42 @@
+Reviewer 6 of ICRA 2019 submission 2057
+
+Comments to the author
+======================
+
+The paper presents a novel approach to solving inverse
+kinematics problems for robotic arms with 7 degrees of
+freedom. The authors demonstrate that the proposed approach
+is able to find multiple IK solutions, which is beneficial
+in the presence of control and sensing uncertainty. The
+experimental evaluation is adequate and includes comparison
+with IKFast, which is the state-of-the-art algorithm for
+solving IK problems.
+
+The paper is well structured, and the contribution is
+clearly explained, relevant and interesting. The paper
+would benefit from a broader discussion of the existing
+methods. The authors consider two main approaches to IK
+problems: "Jacobian-based and geometric-based"; it would be
+interesting to also consider papers where the authors are
+generating smooth trajectories instead of solving IK
+problems at single points, such as, for example,
+
+Kris Hauser, Continuous Pseudoinversion of a Multivariate
+Function: Application to Global Redundancy Resolution,
+  
+and
+
+Daniel Rakita, Bilge Mutlu, Michael Gleicher. RelaxedIK:
+Real-time Synthesis of Accurate and Feasible Robot Arm
+Motion.
+
+
+Although the paper is generally well structured, I
+recommend the authors to improve the language. Here are
+some of the typos:
+
+*abstract: does not guarantee -- are not guaranteed
+*page 1: ..known as redundancy resolution [] -- a reference
+is missing
+*page 3: as following -- as follows
+*page 3: withing -- within
